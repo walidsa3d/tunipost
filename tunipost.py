@@ -1,8 +1,10 @@
+#!/usr/bin/env python
+#walid.saad
+
 import csv
-from prettytable import PrettyTable
 import re
 import argparse
-
+from termcolor import colored
 class tunipost:
     def code(self,location):
         results=[]
@@ -32,7 +34,11 @@ class tunipost:
         return results
     def display(self,results):
         for result in results:
-            print result[0]+", "+result[1]+", "+result[2]+": "+result[3]
+            wilaya=colored(result[0],'red')
+            motamadia=colored(result[1],'green')
+            code=colored(result[3],'yellow')
+            street=colored(result[2],'blue')
+            print wilaya+", "+motamadia+", "+street+": "+code
         
     def main(self):
         parser = argparse.ArgumentParser(usage="-h for full usage")
