@@ -1,0 +1,3 @@
+include tunipost/*.csv
+include LICENSE
+include *.rst

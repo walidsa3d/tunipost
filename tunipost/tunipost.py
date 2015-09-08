@@ -5,7 +5,12 @@ import csv
 import re
 import argparse
 from termcolor import colored
-class tunipost:
+
+class tunipost(object):
+
+    
+    def __init__(self):
+        pass
     def code(self,location):
         results=[]
         with open('codes.csv') as f:

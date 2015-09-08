@@ -1,12 +1,9 @@
 from setuptools import setup, find_packages
-
-data_files = [
-    ('share/doc/tunipost', ['README.md'])
-]
+from tunipost import __version__
 
 setup(
     name='tunipost',
-    version='0.9',
+    version=__version__,
     description="Find Tunisian Postal Codes",
     long_description=open('README.md').read(),
     author='Walid Saad',
@@ -17,8 +14,7 @@ setup(
     keywords="tunis tunisia postal code",
     packages=find_packages(),
     include_package_data=True,
-    data_files=data_files,
-    entry_points={"console_scripts": [""]},
+    entry_points={"console_scripts": ["tunipost=tunipost.cli:main"]},
     classifiers=[
         'Development Status :: 4  - Beta',
         'Environment :: Console',
