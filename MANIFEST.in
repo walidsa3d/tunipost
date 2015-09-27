@@ -1,3 +1,5 @@
 include tunipost/*.csv
 include LICENSE
 include *.rst
+# added by check_manifest.py
+include *.md

@@ -1,19 +1,19 @@
-from setuptools import setup, find_packages
-from tunipost import __version__
+from setuptools import find_packages
+from setuptools import setup
 
 setup(
     name='tunipost',
-    version=__version__,
+    version='1.0.0',
     description="Find Tunisian Postal Codes",
     long_description=open('README.md').read(),
     author='Walid Saad',
     author_email='walid.sa3d@gmail.com',
     url='https://github.com/walidsa3d/tunipost',
-    # download_url='',
-    license="GPL",
+    license="MIT",
     keywords="tunis tunisia postal code",
     packages=find_packages(),
     include_package_data=True,
+    zip_safe=False,
     entry_points={"console_scripts": ["tunipost=tunipost.cli:main"]},
     classifiers=[
         'Development Status :: 4  - Beta',

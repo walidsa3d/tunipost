@@ -5,15 +5,16 @@ import csv
 import re
 import argparse
 from termcolor import colored
+import os
 
 class tunipost(object):
 
-    
+
     def __init__(self):
-        pass
+        self.data=os.path.join(os.path.dirname(__file__),'codes.csv')
     def code(self,location):
         results=[]
-        with open('codes.csv') as f:
+        with open(self.data) as f:
             reader = csv.reader(f)
             for row in reader:
                 match = re.search(location, row[2].lower())
@@ -23,7 +24,7 @@ class tunipost(object):
 
     def location(self,code):
         results=[]
-        with open('codes.csv') as f:
+        with open(self.data) as f:
             reader = csv.reader(f)
             for row in reader:
                 match = re.search(code, row[3].lower())
@@ -32,7 +33,7 @@ class tunipost(object):
         return results
     def all(self):
         results=[]
-        with open('codes.csv') as f:
+        with open(self.data) as f:
             reader = csv.reader(f)
             for row in reader:
                     results.append(row)
